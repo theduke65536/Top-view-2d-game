@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6407834907238569064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7418015323675866010}
+  m_Layer: 0
+  m_Name: DefaultGunPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7418015323675866010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407834907238569064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.797, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4459618820121249056}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8074430510286064097
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,12 +40,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4459618820121249056}
+  - component: {fileID: 1410353762715424432}
   - component: {fileID: 6964145775740016472}
   - component: {fileID: 8177268385599455736}
   - component: {fileID: 8913576932848828963}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,9 +64,25 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1133191246584178960}
+  - {fileID: 7418015323675866010}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1410353762715424432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074430510286064097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cb1a6b25008234fa63fecee7aef34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultGunInstantiationPosition: {fileID: 7418015323675866010}
+  rocketLauncherSprite: {fileID: 21300000, guid: 5012b32fae4242242b50216a03bd3e42, type: 3}
+  rocketLauncherObject: {fileID: 2901441619188215734, guid: 251ba90371529dd4d870a3207ca0be77, type: 3}
 --- !u!114 &6964145775740016472
 MonoBehaviour:
   m_ObjectHideFlags: 0
