@@ -9,7 +9,7 @@ public class Gun
     public GameObject parent;
 
 
-    public Gun( GameObject _gunObject, GameObject _parent) {
+    public Gun(GameObject _gunObject, GameObject _parent) {
         parent = _parent;
         gunObject = _gunObject;
     }
@@ -19,6 +19,7 @@ public class Gun
         GameObject instantiatedGun = GameObject.Instantiate(gunObject, position, rotation);
 
         instantiatedGun.transform.parent = parent.transform;
+        instantiatedGun.SetActive(false);
 
         return instantiatedGun;
     }

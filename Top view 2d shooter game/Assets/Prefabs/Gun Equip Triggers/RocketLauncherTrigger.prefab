@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4268211382938986787}
   - component: {fileID: 8431261213213814980}
   m_Layer: 0
-  m_Name: Rocket Launcher Trigger
+  m_Name: RocketLauncherTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipItem:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PickupItems, Assembly-CSharp
+        m_MethodName: pickupRocketLauncher
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  thisInstance: {fileID: 1098492906965748568}
 --- !u!1 &8050301828385030226
 GameObject:
   m_ObjectHideFlags: 0
