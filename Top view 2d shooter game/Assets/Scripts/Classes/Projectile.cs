@@ -4,31 +4,25 @@ using UnityEngine;
 
 public class Projectile
 {
-    public float damage;
-
     public GameObject projectileObject;
-    public Sprite projectileSprite;
-    public SpriteRenderer spriteRenderer;
+    public float speed;
+    public float damage;
+    public ParticleSystem particlesOnDeath;
 
-    public Projectile(float _damage, GameObject _projectileObject, Sprite _projectileSprite) {
-        damage = _damage;
+    public Projectile(GameObject _projectileObject, float _speed, float _damage, ParticleSystem _particlesOnDeath) {
         projectileObject = _projectileObject;
-        projectileSprite = _projectileSprite;
-
-        spriteRenderer = projectileObject.GetComponent<SpriteRenderer>();
+        speed = _speed;
+        damage = _damage;
+        particlesOnDeath = _particlesOnDeath;
     }
 
 
-    public GameObject FireProjectile(Vector3 position, Quaternion rotation, Vector2 velocity) {
+    public GameObject FireProjectile(Vector3 position, Quaternion rotation) {
         GameObject instantiatedProjectile = GameObject.Instantiate(projectileObject, position, rotation);
         Rigidbody2D instantiatedProjectileRigidbody = instantiatedProjectile.GetComponent<Rigidbody2D>();
 
-        instantiatedProjectileRigidbody.velocity = velocity;
-        spriteRenderer.sprite = projectileSprite;
+        instantiatedProjectileRigidbody.velocity = instantiatedProjectile.transform.right * speed;
 
         return instantiatedProjectile;
     }
-
-
-
 }

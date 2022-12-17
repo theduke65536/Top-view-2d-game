@@ -7,6 +7,7 @@ public class Gun
     public GameObject gunObject;
     public Sprite sprite;
     public GameObject parent;
+    public float damage;
 
 
     public Gun(GameObject _gunObject, GameObject _parent) {

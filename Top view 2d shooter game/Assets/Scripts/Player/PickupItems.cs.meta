@@ -3,7 +3,11 @@ guid: 03cb1a6b25008234fa63fecee7aef34a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - defaultGunInstantiationPosition: {instanceID: 0}
+  - rocketLauncherObject: {fileID: 2901441619188215734, guid: 251ba90371529dd4d870a3207ca0be77, type: 3}
+  - sniperRifleObject: {fileID: 6093610657775524981, guid: af7b52e8e887aee46aae2401f12d0f8c, type: 3}
+  - sampleGunObject: {fileID: 4616182140421978660, guid: 13c44c6476295554494bca0233797973, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

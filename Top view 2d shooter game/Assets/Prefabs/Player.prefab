@@ -40,9 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4459618820121249056}
-  - component: {fileID: 1410353762715424432}
   - component: {fileID: 8177268385599455736}
   - component: {fileID: 8913576932848828963}
+  - component: {fileID: 1727220694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -68,21 +68,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1410353762715424432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8074430510286064097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03cb1a6b25008234fa63fecee7aef34a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultGunInstantiationPosition: {fileID: 7418015323675866010}
-  rocketLauncherObject: {fileID: 2901441619188215734, guid: 251ba90371529dd4d870a3207ca0be77, type: 3}
-  sniperRifleObject: {fileID: 6093610657775524981, guid: af7b52e8e887aee46aae2401f12d0f8c, type: 3}
 --- !u!61 &8177268385599455736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,6 +115,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1727220694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074430510286064097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220106fc39d156748aa7d1270b1cc523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  mainCamera: {fileID: 0}
 --- !u!1 &8936254607014259653
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,9 +222,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6889463444308578843}
-  - component: {fileID: 5399652185555357342}
+  - component: {fileID: 2122536034}
+  - component: {fileID: 2122536036}
   m_Layer: 0
-  m_Name: Weapons
+  m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,19 @@ Transform:
   m_Father: {fileID: 4459618820121249056}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5399652185555357342
+--- !u!114 &2122536034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197285391636199145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e864505f9eed453459821f4103e03cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2122536036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,3 +273,4 @@ MonoBehaviour:
   defaultGunInstantiationPosition: {fileID: 7418015323675866010}
   rocketLauncherObject: {fileID: 2901441619188215734, guid: 251ba90371529dd4d870a3207ca0be77, type: 3}
   sniperRifleObject: {fileID: 6093610657775524981, guid: af7b52e8e887aee46aae2401f12d0f8c, type: 3}
+  sampleGunObject: {fileID: 4616182140421978660, guid: 13c44c6476295554494bca0233797973, type: 3}

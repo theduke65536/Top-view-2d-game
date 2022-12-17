@@ -9,6 +9,7 @@ public class PickupItems : MonoBehaviour
 
     public GameObject rocketLauncherObject;
     public GameObject sniperRifleObject;
+    public GameObject sampleGunObject;
 
 
     public void pickupRocketLauncher() {
@@ -18,7 +19,13 @@ public class PickupItems : MonoBehaviour
 
 
     public void pickupSniperRifle() {
-        Gun equipedRocketLauncher = new Gun(sniperRifleObject, gameObject);
-        equipedRocketLauncher.InstantiateGun(defaultGunInstantiationPosition.position, transform.rotation);
+        Gun equipedSniperRifle = new Gun(sniperRifleObject, gameObject);
+        equipedSniperRifle.InstantiateGun(defaultGunInstantiationPosition.position, transform.rotation);
+    }
+
+
+    public void pickupSampleGun() {
+        Gun equipedSampleGun = new Gun(sampleGunObject, gameObject);
+        equipedSampleGun.InstantiateGun(defaultGunInstantiationPosition.position, transform.rotation);
     }
 }

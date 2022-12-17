@@ -43,6 +43,7 @@ public class PlayerInventory : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2)) {
             Weapons[1].SetActive(!Weapons[1].activeSelf);
             setSiblingsInactive(Weapons[1]);
+
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3)) {
             Weapons[2].SetActive(!Weapons[2].activeSelf);
