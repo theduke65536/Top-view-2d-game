@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// This script is attatched to item triggers that can be picked up by the player
 public class TriggerPickupEvent : MonoBehaviour
 {
     public UnityEvent equipItem;

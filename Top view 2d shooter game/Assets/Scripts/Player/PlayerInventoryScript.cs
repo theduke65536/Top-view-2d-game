@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour
+// Script attatched to the 'Inventory' child of Player. Manages the inventory.
+public class PlayerInventoryScript : MonoBehaviour
 {
-    private List<GameObject> Weapons = new List<GameObject>();
+    private List<GameObject> Weapons = new List<GameObject>(); // List that holds the items in the player's inventory.
 
+    // Only checks inventory spaces periodically to save a bit of processing power.
     IEnumerator CheckInventoryChanges() {
         while (true) {
             foreach (Transform child in transform) {
@@ -18,7 +20,8 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-
+    // When the player equips an item in their inventory the other items are set inactive
+    // To prevent the player holding multiple items at once
     private void setSiblingsInactive(GameObject GameObjNotToUnactivate) {
         foreach(GameObject sibling in Weapons) {
             if (sibling != GameObjNotToUnactivate) {
@@ -34,8 +37,8 @@ public class PlayerInventory : MonoBehaviour
 
 
     private void Update() {
-        print(Weapons.Count);
-
+        // These if statements allow the player to equip different items in the inventory.
+        // The exact same way as the Minecraft hotbar system.
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             Weapons[0].SetActive(!Weapons[0].activeSelf);
             setSiblingsInactive(Weapons[0]);
@@ -43,7 +46,6 @@ public class PlayerInventory : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2)) {
             Weapons[1].SetActive(!Weapons[1].activeSelf);
             setSiblingsInactive(Weapons[1]);
-
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3)) {
             Weapons[2].SetActive(!Weapons[2].activeSelf);

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6738893281191434951}
   - component: {fileID: 4459971776719454215}
   - component: {fileID: 4844702258076695362}
+  - component: {fileID: 4595210711566432110}
   m_Layer: 0
   m_Name: Sample
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301995077747494126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.53, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -81,6 +82,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4595210711566432110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301995077747494126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3b0cbe74072f947a2c857159849b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesOnCollision: {fileID: 0}
+  damage: 5000
 --- !u!1 &6911249644456812328
 GameObject:
   m_ObjectHideFlags: 0
