@@ -6,7 +6,7 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour
 {
     public ParticleSystem particlesOnCollision; // The particle effect that's instantiated on the projectile's collision
-    public float damage;                        // Damage dealt by the projectile
+    public static float damage;                        // Damage dealt by the projectile
 
 
     private void Update() {
