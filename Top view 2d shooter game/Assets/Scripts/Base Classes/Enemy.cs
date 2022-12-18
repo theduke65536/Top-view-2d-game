@@ -45,7 +45,7 @@ public class Enemy
     public void LookAtPlayer() {
 
         playerLookVector = playerTransform.position - enemyTransform.position;
-        enemyTransform.right = playerLookVector;
+        enemyTransform.right = Vector3.Slerp(enemyTransform.right, playerLookVector, 0.2f);
 
     }
 
