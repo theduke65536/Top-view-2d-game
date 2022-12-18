@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6738893281191434951}
   - component: {fileID: 4459971776719454215}
   - component: {fileID: 4844702258076695362}
-  - component: {fileID: 4595210711566432110}
+  - component: {fileID: 6688564701006984325}
   m_Layer: 0
   m_Name: Sample
   m_TagString: Untagged
@@ -82,7 +82,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4595210711566432110
+--- !u!114 &6688564701006984325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,11 +91,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1301995077747494126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3b0cbe74072f947a2c857159849b08, type: 3}
+  m_Script: {fileID: 11500000, guid: 5aeacf735f2fd334f98b96bec4c37948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlesOnCollision: {fileID: 0}
-  damage: 5000
+  onCollisionParticles: {fileID: 7545708608482967256, guid: c3142a08571ca6649b71b84c7556ca57, type: 3}
 --- !u!1 &6911249644456812328
 GameObject:
   m_ObjectHideFlags: 0

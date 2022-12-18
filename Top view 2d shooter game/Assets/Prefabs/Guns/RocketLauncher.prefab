@@ -161,8 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bca76137a9c7544b1f9d67d4f435e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  projectileVelocity: 10
-  gunBarrel: {fileID: 2890250006753725818}
-  projectileParticles: {fileID: 0}
   projectile: {fileID: 3206765452709619164, guid: 771324506fae6c740bf92330f5214f40, type: 3}
+  gunBarrelPosition: {fileID: 2890250006753725818}
+  projectileSpeed: 10

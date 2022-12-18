@@ -10,6 +10,7 @@ public class PlayerMovementScript : MonoBehaviour
     public Camera mainCamera;               // Main camera of the game
     private Rigidbody2D playerRigidbody;    // Rigidbody2D of the player
     private Vector2 playerVelocity;         // Velocity of the player
+    public Transform cameraPosition;
 
     void Start() {
         playerRigidbody = GetComponent<Rigidbody2D>();
@@ -29,5 +30,8 @@ public class PlayerMovementScript : MonoBehaviour
         Vector3 newRotation = mousePosition - transform.position;
         newRotation.z = 0f;
         transform.right = newRotation;
+
+        Vector3 newCameraPosition = new Vector3(cameraPosition.position.x, cameraPosition.position.y, mainCamera.transform.position.z);
+        mainCamera.transform.position = Vector3.Slerp(mainCamera.transform.position, newCameraPosition, 0.1F);
     }
 }

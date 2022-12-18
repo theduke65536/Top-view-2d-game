@@ -2,19 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Attatched to each gun and is used to fire projectiles out of the gun.
 public class GunScript : MonoBehaviour
 {
-    public float projectileVelocity;    // Speed of the projectile
+    public GameObject projectile;
+    public Transform gunBarrelPosition;
+    public float projectileSpeed;
+    public float projectileDamage;
 
-    public Transform gunBarrel;         // Where the bullet will be instantiated
-    public GameObject projectile;       // The projectile itself
+
+    public void FireProjectile() {
+        GameObject instantiatedProjectile = GameObject.Instantiate(projectile, gunBarrelPosition.position, Quaternion.Euler(gunBarrelPosition.right));
+        Rigidbody2D instantiatedProjectileRb = instantiatedProjectile.GetComponent<Rigidbody2D>();
+
+        instantiatedProjectileRb.velocity = gunBarrelPosition.right * projectileSpeed;
+
+        instantiatedProjectile.transform.right = transform.right;
+    }
+
 
     private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            Projectile newProjectile = new Projectile(projectile, projectileVelocity);
-
-            newProjectile.FireProjectile(gunBarrel.position, gunBarrel.rotation, gameObject);
+        if (Input.GetButtonDown("Fire1")) {
+            FireProjectile();
         }
     }
 }

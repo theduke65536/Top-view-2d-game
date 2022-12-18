@@ -9,24 +9,32 @@ public class PickupItems : MonoBehaviour
 
     // Prefab of each gun
     public GameObject rocketLauncherObject;
+
     public GameObject sniperRifleObject;
+
     public GameObject sampleGunObject;
+
+
+    public void PickupGun(Vector3 position, Quaternion rotation, GameObject gunObject) {
+        GameObject instantiatedGun = GameObject.Instantiate(gunObject, position, rotation);
+
+        instantiatedGun.transform.parent = transform;
+        instantiatedGun.SetActive(false);
+    }
+
 
     // These methods are called when the player player picks up an item
     public void pickupRocketLauncher() {
-        Gun equipedRocketLauncher = new Gun(rocketLauncherObject, gameObject);
-        equipedRocketLauncher.InstantiateGun(defaultGunInstantiationPosition.position, transform.rotation);
+        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, rocketLauncherObject);
     }
 
 
     public void pickupSniperRifle() {
-        Gun equipedSniperRifle = new Gun(sniperRifleObject, gameObject);
-        equipedSniperRifle.InstantiateGun(defaultGunInstantiationPosition.position, transform.rotation);
+        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, sniperRifleObject);
     }
 
 
     public void pickupSampleGun() {
-        Gun equipedSampleGun = new Gun(sampleGunObject, gameObject);
-        equipedSampleGun.InstantiateGun(defaultGunInstantiationPosition.position, transform.rotation);
+        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, sampleGunObject);
     }
 }
