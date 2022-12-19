@@ -10,20 +10,10 @@ public class GunProjectileScript : MonoBehaviour
     public float projectileSpeed;       // The speed of the projectile.
     public float cooldown;              // Speed at which the player can fire
 
-    private bool permitShoot = true;           // Whether or not the player can shoot
-
-
-    IEnumerator FireCooldown() {
-        permitShoot = false;
-        yield return new WaitForSeconds(cooldown);
-        permitShoot = true;
-    }
-
+    private float ongoingFireCooldown;
 
     // Fires the projectile.
     public void FireProjectile() {
-        StartCoroutine(FireCooldown());
-
         GameObject instantiatedProjectile = GameObject.Instantiate(projectile, gunBarrelPosition.position, Quaternion.Euler(gunBarrelPosition.right));
         Rigidbody2D instantiatedProjectileRb = instantiatedProjectile.GetComponent<Rigidbody2D>();
 
@@ -34,8 +24,10 @@ public class GunProjectileScript : MonoBehaviour
 
 
     private void Update() {
-        if (Input.GetButtonDown("Fire1") && permitShoot) {
+        ongoingFireCooldown += Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && ongoingFireCooldown >= cooldown) {
             FireProjectile();
+            ongoingFireCooldown = 0;
         }
     }
 }

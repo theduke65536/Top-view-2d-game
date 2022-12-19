@@ -5,12 +5,19 @@ using UnityEngine;
 // Health system attatched to all alive GameObjects.
 public class HealthSystemScript : MonoBehaviour
 {
-    public float maxHealth; // Maximum health the GameObject can have
-    private float health;   // Current health the GameObject has.
-
+    public float maxHealth;                 // Maximum health the GameObject can have
+    private float health;                   // Current health the GameObject has.
+    public bool lingerDamageActive;
 
     private void Start() {
         health = maxHealth;
+    }
+
+
+    private void Update() {
+        if (transform.CompareTag("Player")) {
+            print(health);
+        }
     }
 
 
@@ -22,6 +29,4 @@ public class HealthSystemScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

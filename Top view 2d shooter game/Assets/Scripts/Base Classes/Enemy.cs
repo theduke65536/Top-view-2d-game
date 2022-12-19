@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Enemy base class. Inherited by all enemy types.
-public abstract class  Enemy
+abstract class Enemy
 {
-    public float health;                // Health of the enemy
-    public float detectionRadius;       // The radius at which the player is seen by the enemy
-    public float speed;                 // How fast the enemy moves
+    protected float detectionRadius;       // The radius at which the player is seen by the enemy
+    protected float speed;                 // How fast the enemy moves
 
-    public Transform enemyTransform;
-    public Transform playerTransform;   
+    protected Transform enemyTransform;
+    protected Transform playerTransform;
 
-    private Vector3 playerLookVector;   // Direction pointing at the player
-    private Rigidbody2D enemyRb;
+    protected Vector3 playerLookVector;   // Direction pointing at the player
+    protected Rigidbody2D enemyRb;
 
-    public Enemy(float _health, float _detectionRadius, float _speed, LayerMask _playerLayer, Transform _playerTransform, Transform _enemyTransform) {
-        health = _health;
+    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform) {
         playerTransform = _playerTransform;
         detectionRadius = _detectionRadius;
         enemyTransform = _enemyTransform;
@@ -27,23 +25,11 @@ public abstract class  Enemy
 
     // Checks if the player is currently within detectionRadius.
     public bool CheckIfPlayerInRange() {
-<<<<<<< Updated upstream
-        Collider2D[] colliderArr = Physics2D.OverlapCircleAll(enemyTransform.position, detectionRadius);
-
-        if (colliderArr != null) {
-            foreach(Collider2D collider in colliderArr)
-            {
-                if (collider.gameObject.CompareTag("Player"))
-                {
-                    return true;
-                }
-=======
         Collider2D[] colliders = Physics2D.OverlapCircleAll(enemyTransform.position, detectionRadius);
 
         foreach(Collider2D collider in colliders) {
             if (collider.gameObject.CompareTag("Player")) {
                 return true;
->>>>>>> Stashed changes
             }
         }
 

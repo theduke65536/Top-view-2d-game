@@ -7,32 +7,78 @@ public class ZombieScript : MonoBehaviour
 {
     private Zombie zombie;  // Zombie class
 
-    public float health;            // Health of the zombie
-    public float detectionRadius;   // The radius at which the player is seen by the zombie
-    public float speed;             // How fast the zombie moves
-    public LayerMask playerLayer;   // The LayerMask of the player
+    public float detectionRadius;        // The radius at which the player is seen by the zombie
+    public float speed;                  // How fast the zombie moves
+    public float attackRadius;           // Range at which the enemy can attach the player
+    public float attackDamage;           // Damage which is dealt to the player
+    public float attackCooldown;         // Time between each zombie attack
+    public float lingeringDamageSpeed;   // Rate at which the player takes lingering damage
+    public float lingeringDamageDuration;// How long lingering damage lasts
 
     public Transform playerTransform;
     public Transform enemyTransform;
 
-    private bool isPlayerInRange;   
+    private bool isPlayerInViewRange;
+    private bool isPlayerInAtkRange;
+    private float ongoingAttackCooldown;
+    private float lingeringDamageOngoingTimer;
+    
 
     // Creates a zombie object
-    private void Start() {
-        zombie = new Zombie(health, detectionRadius, speed, playerLayer, playerTransform, enemyTransform);
+    private void Awake() {
+        zombie = new Zombie(detectionRadius, speed, playerTransform, enemyTransform, attackRadius, attackDamage);
     }
 
 
     private void Update() {
 
-        isPlayerInRange = zombie.CheckIfPlayerInRange();
+        isPlayerInAtkRange = zombie.CheckIfPlayerInAtkRange();
 
-        if (isPlayerInRange) {
+        // Attacks the player if they're in range and cooldown has finished
+        ongoingAttackCooldown += Time.deltaTime;
+        if (isPlayerInAtkRange && ongoingAttackCooldown >= attackCooldown) {
+            zombie.Attack();
+
+            // Will only start lingering damage timer if there isn't one already running
+            // So the player cant get x2 lingering damage
+            if (!zombie.playerHealthScript.lingerDamageActive) {
+                StartCoroutine(LingeringDamageTimer());
+            }
+            else {
+                lingeringDamageOngoingTimer = 0;
+
+            }
+
+            ongoingAttackCooldown = 0;
+        }
+
+
+        isPlayerInViewRange = zombie.CheckIfPlayerInRange();
+
+        if (isPlayerInViewRange) {
             zombie.LookAtPlayer();
             zombie.MoveTowardsPlayer();
         } else {
             zombie.PlayerNotInRange();
         }
+    }
+
+    // When the zombie attacks the player, they slowly continue taking damage overtime
+    // Like an infection
+    IEnumerator LingeringDamageTimer() {
+        zombie.playerHealthScript.lingerDamageActive = true;
+
+        while (lingeringDamageOngoingTimer <= lingeringDamageDuration * 10) {
+            // Acts the same as a timer
+            lingeringDamageOngoingTimer += lingeringDamageSpeed;
+
+            yield return new WaitForSeconds(lingeringDamageSpeed);
+
+            zombie.Attack(0.01f);
+        }
+
+        zombie.playerHealthScript.lingerDamageActive = false;
+        lingeringDamageOngoingTimer = 0;
     }
 
 }

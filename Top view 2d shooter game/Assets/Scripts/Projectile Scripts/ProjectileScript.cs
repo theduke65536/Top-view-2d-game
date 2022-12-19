@@ -9,15 +9,15 @@ public class ProjectileScript : MonoBehaviour
     public ParticleSystem onCollisionParticles;
     public float projectileDamage;
 
-    // Plays a particle effect on collision then destroys itself.
-    private void OnCollisionEnter2D(Collision2D collision) {
+
+    private void OnTriggerEnter2D(Collider2D collision) {
         Instantiate(onCollisionParticles, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Alive")) {
             HealthSystemScript healthSystemScript = collision.gameObject.GetComponent<HealthSystemScript>();
-            healthSystemScript.TakeDamage(projectileDamage);
+            healthSystemScript.TakeDamage(projectileDamage);      
         }
     }
 }
