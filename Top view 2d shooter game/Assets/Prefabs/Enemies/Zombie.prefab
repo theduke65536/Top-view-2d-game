@@ -48,13 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1d0255529c0094dbf7a8b5be5baa54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  detectionRadius: 4
+  health: 10
+  detectionRadius: 10
   speed: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 4459618820121249056, guid: a08aef722b46ec14aa8eb2028a593eb9, type: 3}
   enemyTransform: {fileID: 8620059629314133522}
 --- !u!50 &3251409444565850024
 Rigidbody2D:

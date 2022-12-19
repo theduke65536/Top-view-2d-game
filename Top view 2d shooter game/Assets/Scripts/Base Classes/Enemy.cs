@@ -8,7 +8,6 @@ public class Enemy
     public float health;                // Health of the enemy
     public float detectionRadius;       // The radius at which the player is seen by the enemy
     public float speed;                 // How fast the enemy moves
-    public LayerMask playerLayer;       // Player LayerMask
 
     public Transform enemyTransform;
     public Transform playerTransform;   
@@ -21,7 +20,6 @@ public class Enemy
         playerTransform = _playerTransform;
         detectionRadius = _detectionRadius;
         enemyTransform = _enemyTransform;
-        playerLayer = _playerLayer;
         speed = _speed;
 
         enemyRb = enemyTransform.GetComponent<Rigidbody2D>();
@@ -29,10 +27,16 @@ public class Enemy
 
     // Checks if the player is currently within detectionRadius.
     public bool CheckIfPlayerInRange() {
-        Collider2D collider = Physics2D.OverlapCircle(enemyTransform.position, detectionRadius, playerLayer);
+        Collider2D[] colliderArr = Physics2D.OverlapCircleAll(enemyTransform.position, detectionRadius);
 
-        if (collider != null) {
-            return true;
+        if (colliderArr != null) {
+            foreach(Collider2D collider in colliderArr)
+            {
+                if (collider.gameObject.CompareTag("Player"))
+                {
+                    return true;
+                }
+            }
         }
         return false;
     }
