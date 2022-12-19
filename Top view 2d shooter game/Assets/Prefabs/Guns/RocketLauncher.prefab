@@ -164,4 +164,4 @@ MonoBehaviour:
   projectile: {fileID: 3206765452709619164, guid: 771324506fae6c740bf92330f5214f40, type: 3}
   gunBarrelPosition: {fileID: 2890250006753725818}
   projectileSpeed: 10
-  projectileDamage: 0
+  cooldown: 3

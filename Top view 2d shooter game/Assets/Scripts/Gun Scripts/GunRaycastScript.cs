@@ -7,11 +7,17 @@ public class GunRaycastScript : MonoBehaviour
     public Transform gunBarrelPosition;         // The position that the raycast will be fired from.
     public float damage;                        // Damage dealt by the raycasst
     public GameObject impactEffectBlood;        // Effect on impacting an alive GameObject
+    public float cooldown;              // Speed at which the player can fire
 
     public GameObject impactEffectSpillBlood1;   // Blood that's left on the floor when an enemy has been hit
     public GameObject impactEffectSpillBlood2;
 
+    private bool permitShoot = true;           // Whether or not the player can shoot
+
+
     private void FireRaycast() {
+        StartCoroutine(FireCooldown());
+
         RaycastHit2D raycastHitInfo = Physics2D.Raycast(gunBarrelPosition.position, gunBarrelPosition.right);
 
         if (raycastHitInfo) {
@@ -35,8 +41,15 @@ public class GunRaycastScript : MonoBehaviour
     }
 
 
+    IEnumerator FireCooldown() {
+        permitShoot = false;
+        yield return new WaitForSeconds(cooldown);
+        permitShoot = true;
+    }
+
+
     private void Update() {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1") && permitShoot) {
             FireRaycast();
         }
     }

@@ -146,8 +146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunBarrelPosition: {fileID: 8083640109300440200}
-  damage: 2
+  damage: 4
   impactEffectBlood: {fileID: 2921161555807392916, guid: dd5e961e7c7d16c4aaff13a86bc355a3, type: 3}
+  cooldown: 1.5
   impactEffectSpillBlood1: {fileID: 1856547722293145029, guid: f91f91f37613f5340b662287c9c6445a, type: 3}
   impactEffectSpillBlood2: {fileID: 1856547722293145029, guid: cd470dbdc0a3ca74c979cacd74d00d06, type: 3}
 --- !u!1 &7815825190949911812

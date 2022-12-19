@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Enemy base class. Inherited by all enemy types.
-public class Enemy
+public abstract class  Enemy
 {
     public float health;                // Health of the enemy
     public float detectionRadius;       // The radius at which the player is seen by the enemy
@@ -27,6 +27,7 @@ public class Enemy
 
     // Checks if the player is currently within detectionRadius.
     public bool CheckIfPlayerInRange() {
+<<<<<<< Updated upstream
         Collider2D[] colliderArr = Physics2D.OverlapCircleAll(enemyTransform.position, detectionRadius);
 
         if (colliderArr != null) {
@@ -36,8 +37,16 @@ public class Enemy
                 {
                     return true;
                 }
+=======
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(enemyTransform.position, detectionRadius);
+
+        foreach(Collider2D collider in colliders) {
+            if (collider.gameObject.CompareTag("Player")) {
+                return true;
+>>>>>>> Stashed changes
             }
         }
+
         return false;
     }
 

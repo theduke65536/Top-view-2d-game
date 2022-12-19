@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3251409444565850024}
   - component: {fileID: 5685981416415854138}
   - component: {fileID: -7344494884417572648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,8 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1d0255529c0094dbf7a8b5be5baa54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   health: 10
   detectionRadius: 10
+=======
+  health: 5
+  detectionRadius: 8
+>>>>>>> Stashed changes
   speed: 1
   playerLayer:
     serializedVersion: 2
@@ -126,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3830402947844359598}
   - component: {fileID: 7227106184151664871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
