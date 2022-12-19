@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onCollisionParticles: {fileID: 7545708608482967256, guid: c3142a08571ca6649b71b84c7556ca57, type: 3}
+  projectileDamage: 5000
 --- !u!1 &6911249644456812328
 GameObject:
   m_ObjectHideFlags: 0

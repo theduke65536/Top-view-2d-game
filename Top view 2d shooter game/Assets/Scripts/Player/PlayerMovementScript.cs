@@ -31,6 +31,7 @@ public class PlayerMovementScript : MonoBehaviour
         newRotation.z = 0f;
         transform.right = newRotation;
 
+        // Attatches the camera to the player and smoothly follows the player around
         Vector3 newCameraPosition = new Vector3(cameraPosition.position.x, cameraPosition.position.y, mainCamera.transform.position.z);
         mainCamera.transform.position = Vector3.Slerp(mainCamera.transform.position, newCameraPosition, 0.1F);
     }

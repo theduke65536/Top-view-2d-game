@@ -2,37 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script attatched to the Zombie prefab.
 public class ZombieScript : MonoBehaviour
 {
-    private Zombie zombie;
+    private Zombie zombie;  // Zombie class
 
-    public float health;
-    public float detectionRadius;
-    public float speed;
-    public LayerMask playerLayer;
+    public float health;            // Health of the zombie
+    public float detectionRadius;   // The radius at which the player is seen by the zombie
+    public float speed;             // How fast the zombie moves
+    public LayerMask playerLayer;   // The LayerMask of the player
 
     public Transform playerTransform;
     public Transform enemyTransform;
 
-    private bool isPlayerInRange;
+    private bool isPlayerInRange;   
 
+    // Creates a zombie object
     private void Start() {
-        zombie = new Zombie(health, detectionRadius, speed, playerLayer, playerTransform, enemyTransform, 2);
-
-    }
-
-
-    IEnumerator CheckIfPlayerInRange() {
-        while (true){
-            yield return new WaitForSeconds(0.1f);
-
-            isPlayerInRange = zombie.CheckIfPlayerInRange();
-        }
+        zombie = new Zombie(health, detectionRadius, speed, playerLayer, playerTransform, enemyTransform);
     }
 
 
     private void Update() {
-        StartCoroutine(CheckIfPlayerInRange());
+
+        isPlayerInRange = zombie.CheckIfPlayerInRange();
 
         if (isPlayerInRange) {
             zombie.LookAtPlayer();

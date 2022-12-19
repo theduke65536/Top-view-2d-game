@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script attatched to each gun.
 public class GunScript : MonoBehaviour
 {
-    public GameObject projectile;
-    public Transform gunBarrelPosition;
-    public float projectileSpeed;
-    public float projectileDamage;
+    public GameObject projectile;       // Projectile game object
+    public Transform gunBarrelPosition; // The position that the projectile will be fired from.
+    public float projectileSpeed;       // The speed of the projectile.
 
 
+    // Fires the projectile.
     public void FireProjectile() {
         GameObject instantiatedProjectile = GameObject.Instantiate(projectile, gunBarrelPosition.position, Quaternion.Euler(gunBarrelPosition.right));
         Rigidbody2D instantiatedProjectileRb = instantiatedProjectile.GetComponent<Rigidbody2D>();

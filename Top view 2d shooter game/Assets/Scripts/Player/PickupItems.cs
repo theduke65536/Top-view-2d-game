@@ -14,7 +14,7 @@ public class PickupItems : MonoBehaviour
 
     public GameObject sampleGunObject;
 
-
+    // Instantiates the gun and sets it's parent the Inventory
     public void PickupGun(Vector3 position, Quaternion rotation, GameObject gunObject) {
         GameObject instantiatedGun = GameObject.Instantiate(gunObject, position, rotation);
 
