@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Script attatched to each gun.
-public class GunScript : MonoBehaviour
+public class GunProjectileScript : MonoBehaviour
 {
     public GameObject projectile;       // Projectile game object
     public Transform gunBarrelPosition; // The position that the projectile will be fired from.

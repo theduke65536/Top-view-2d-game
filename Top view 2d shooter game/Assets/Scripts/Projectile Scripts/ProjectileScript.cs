@@ -14,5 +14,10 @@ public class ProjectileScript : MonoBehaviour
         Instantiate(onCollisionParticles, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Alive")) {
+            HealthSystemScript healthSystemScript = collision.gameObject.GetComponent<HealthSystemScript>();
+            healthSystemScript.TakeDamage(projectileDamage);
+        }
     }
 }

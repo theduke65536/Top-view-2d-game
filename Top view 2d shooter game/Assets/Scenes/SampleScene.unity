@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 2744332543730337460, guid: 9c957c9938b727541a152f9d9ca9887f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3577933943968666203, guid: 9c957c9938b727541a152f9d9ca9887f, type: 3}
       propertyPath: speed
       value: 1
@@ -535,6 +539,10 @@ PrefabInstance:
     - target: {fileID: 8620059629314133522, guid: 9c957c9938b727541a152f9d9ca9887f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920063831557124788, guid: 9c957c9938b727541a152f9d9ca9887f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c957c9938b727541a152f9d9ca9887f, type: 3}
