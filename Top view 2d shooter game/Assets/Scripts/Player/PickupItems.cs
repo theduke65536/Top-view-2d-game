@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,12 @@ public class PickupItems : MonoBehaviour
     public GameObject sniperRifleObject;
 
     public GameObject sampleGunObject;
+
+    public GameObject handgunObject;
+
+    public GameObject assaultrifleObject;
+
+    public GameObject shotgunObject;
 
     // Instantiates the gun and sets it's parent the Inventory
     public void PickupGun(Vector3 position, Quaternion rotation, GameObject gunObject) {
@@ -36,5 +43,20 @@ public class PickupItems : MonoBehaviour
 
     public void pickupSampleGun() {
         PickupGun(defaultGunInstantiationPosition.position, transform.rotation, sampleGunObject);
+    }
+
+
+    public void pickupHandgun() {
+        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, handgunObject);
+    }
+
+
+    public void pickupAssaultRifle() {
+        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, assaultrifleObject);
+    }
+
+
+    public void pickupShotgun() {
+        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, shotgunObject);
     }
 }

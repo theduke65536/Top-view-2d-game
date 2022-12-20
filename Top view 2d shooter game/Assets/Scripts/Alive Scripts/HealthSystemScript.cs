@@ -8,16 +8,11 @@ public class HealthSystemScript : MonoBehaviour
     public float maxHealth;                 // Maximum health the GameObject can have
     private float health;                   // Current health the GameObject has.
     public bool lingerDamageActive;
+    public GameObject thisInstance;
+
 
     private void Start() {
         health = maxHealth;
-    }
-
-
-    private void Update() {
-        if (transform.CompareTag("Player")) {
-            print(health);
-        }
     }
 
 
@@ -26,7 +21,7 @@ public class HealthSystemScript : MonoBehaviour
 
         // Kills the GameObject once it's health is zero.
         if (health <= 0) {
-            Destroy(gameObject);
+            Destroy(thisInstance);
         }
     }
 }

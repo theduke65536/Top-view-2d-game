@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 8177268385599455736}
   - component: {fileID: 8913576932848828963}
   - component: {fileID: 1727220694}
+  - component: {fileID: 923959388}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -160,8 +161,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  playerAnimator: {fileID: 2106906802}
   mainCamera: {fileID: 0}
   cameraPosition: {fileID: 2011995911}
+--- !u!114 &923959388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074430510286064097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264d640f356343245a9ea57b0ff73b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  lingerDamageActive: 0
+  thisInstance: {fileID: 8074430510286064097}
 --- !u!1 &8936254607014259653
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133191246584178960}
   - component: {fileID: 3529403168547825378}
+  - component: {fileID: 2106906802}
   m_Layer: 6
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -188,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 8936254607014259653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4459618820121249056}
@@ -246,6 +264,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2106906802
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936254607014259653}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 513bd1b61bb1990409c56bc11be69ff3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9197285391636199145
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,3 +345,6 @@ MonoBehaviour:
   rocketLauncherObject: {fileID: 2901441619188215734, guid: 251ba90371529dd4d870a3207ca0be77, type: 3}
   sniperRifleObject: {fileID: 6093610657775524981, guid: af7b52e8e887aee46aae2401f12d0f8c, type: 3}
   sampleGunObject: {fileID: 4616182140421978660, guid: 13c44c6476295554494bca0233797973, type: 3}
+  handgunObject: {fileID: 2575101815774823051, guid: c4c461fc58abd7e428a018ed6846fee0, type: 3}
+  assaultrifleObject: {fileID: 2575101815774823051, guid: a41b008064f75ac4db16ba998b7249d1, type: 3}
+  shotgunObject: {fileID: 2575101815774823051, guid: 736a54d9543e8824a9371e4a2205df96, type: 3}

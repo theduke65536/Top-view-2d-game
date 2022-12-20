@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovementScript : MonoBehaviour
 {
     public float movementSpeed;             // Speed of the player.
+    public Animator playerAnimator;
 
     public Camera mainCamera;               // Main camera of the game
     private Rigidbody2D playerRigidbody;    // Rigidbody2D of the player
