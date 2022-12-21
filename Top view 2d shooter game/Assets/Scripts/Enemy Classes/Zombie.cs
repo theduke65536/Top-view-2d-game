@@ -19,9 +19,10 @@ class Zombie : Enemy
             Transform _enemyTransform,
 
             float _attackRadius,
-            float _attackDamage
+            float _attackDamage,
+            EnemyAnimationScript _animationScript
         )
-            : base(_detectionRadius, _speed, _playerTransform, _enemyTransform)
+            : base(_detectionRadius, _speed, _playerTransform, _enemyTransform, _animationScript)
     {
         attackRadius = _attackRadius;
         attackDamage = _attackDamage;
@@ -41,11 +42,13 @@ class Zombie : Enemy
                 return true;
             }
         }
+
         return false;
     }
 
     // Attacks the player if they're in range
     public void Attack(float damage = 0) {
+
         if (playerHealthScript is not null) {
             // Simply another way to make an optional parameter without using consts
             // As 0 will never be used as an arguement

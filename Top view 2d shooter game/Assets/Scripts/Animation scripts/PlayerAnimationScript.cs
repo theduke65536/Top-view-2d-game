@@ -4,6 +4,11 @@ using UnityEngine;
 public class PlayerAnimationScript : MonoBehaviour
 {
     public Animator animator;
+    CircleCollider2D playerCollider;
+
+    private void Start() {
+        playerCollider = gameObject.GetComponent<CircleCollider2D>();
+    }
 
 
     private void Update() {
@@ -20,24 +25,7 @@ public class PlayerAnimationScript : MonoBehaviour
 
     public void SetMove(bool condition) {
         animator.SetBool("IsMoving", condition);
-
-
     }
-
-
-    public void SetShoot(bool condition) {
-        animator.SetBool("IsShooting", condition);
-
-
-    }
-
-
-    public void SetReload(bool condition) {
-        animator.SetBool("IsReloading", condition);
-
-        
-    }
-
 
 
     public void SetKnifeEquipped() {
@@ -45,6 +33,8 @@ public class PlayerAnimationScript : MonoBehaviour
         animator.SetBool("ShotgunEquipped", false);
         animator.SetBool("AssaultrifleEquipped", false);
         animator.SetBool("HandgunEquipped", false);
+
+        playerCollider.offset = new Vector2(-0.03f, -0.03f);
     }
 
 
@@ -53,6 +43,8 @@ public class PlayerAnimationScript : MonoBehaviour
         animator.SetBool("ShotgunEquipped", true);
         animator.SetBool("AssaultrifleEquipped", false);
         animator.SetBool("HandgunEquipped", false);
+
+        playerCollider.offset = new Vector2(-0.16f, -0.15f);
     }
 
 
@@ -61,6 +53,8 @@ public class PlayerAnimationScript : MonoBehaviour
         animator.SetBool("ShotgunEquipped", false);
         animator.SetBool("AssaultrifleEquipped", true);
         animator.SetBool("HandgunEquipped", false);
+
+        playerCollider.offset = new Vector2(-0.16f, -0.15f);
     }
 
 
@@ -69,5 +63,7 @@ public class PlayerAnimationScript : MonoBehaviour
         animator.SetBool("ShotgunEquipped", false);
         animator.SetBool("AssaultrifleEquipped", false);
         animator.SetBool("HandgunEquipped", true);
+
+        playerCollider.offset = new Vector2(-0.16f, -0.15f);
     }
 }

@@ -15,6 +15,8 @@ public class ZombieScript : MonoBehaviour
     public float lingeringDamageSpeed;   // Rate at which the player takes lingering damage
     public float lingeringDamageDuration;// How long lingering damage lasts
 
+    public EnemyAnimationScript animationScript;
+
     public Transform playerTransform;
     public Transform enemyTransform;
 
@@ -26,7 +28,7 @@ public class ZombieScript : MonoBehaviour
 
     // Creates a zombie object
     private void Awake() {
-        zombie = new Zombie(detectionRadius, speed, playerTransform, enemyTransform, attackRadius, attackDamage);
+        zombie = new Zombie(detectionRadius, speed, playerTransform, enemyTransform, attackRadius, attackDamage, animationScript);
     }
 
 

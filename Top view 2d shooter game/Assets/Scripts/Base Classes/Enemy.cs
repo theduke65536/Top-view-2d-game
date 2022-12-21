@@ -14,13 +14,16 @@ abstract class Enemy
     protected Vector3 playerLookVector;   // Direction pointing at the player
     protected Rigidbody2D enemyRb;
 
-    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform) {
+    protected EnemyAnimationScript animationScript;
+
+    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform, EnemyAnimationScript _animationScript) {
         playerTransform = _playerTransform;
         detectionRadius = _detectionRadius;
         enemyTransform = _enemyTransform;
         speed = _speed;
 
         enemyRb = enemyTransform.GetComponent<Rigidbody2D>();
+        animationScript = _animationScript;
     }
 
     // Checks if the player is currently within detectionRadius.
@@ -41,11 +44,12 @@ abstract class Enemy
     public void PlayerNotInRange() {
         enemyRb.velocity = Vector2.zero;
         enemyTransform.right = playerLookVector;
+        animationScript.SetMove(false);
     }
-
     // Points the transform.right of the zombie to the player.
     public void LookAtPlayer() {
 
+        animationScript.SetMove(true);
         playerLookVector = playerTransform.position - enemyTransform.position;
         enemyTransform.right = Vector3.Slerp(enemyTransform.right, playerLookVector, 0.2f);
 
