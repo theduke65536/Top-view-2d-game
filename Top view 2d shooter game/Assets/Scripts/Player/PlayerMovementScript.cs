@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerMovementScript : MonoBehaviour
 {
     public float movementSpeed;             // Speed of the player.
-    public Animator playerAnimator;
+
+    private PlayerAnimationScript animationScript;
 
     public Camera mainCamera;               // Main camera of the game
     private Rigidbody2D playerRigidbody;    // Rigidbody2D of the player
@@ -15,6 +16,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Start() {
         playerRigidbody = GetComponent<Rigidbody2D>();
+
+        animationScript = GetComponent<PlayerAnimationScript>();
     }
 
 
@@ -35,5 +38,11 @@ public class PlayerMovementScript : MonoBehaviour
         // Attatches the camera to the player and smoothly follows the player around
         Vector3 newCameraPosition = new Vector3(cameraPosition.position.x, cameraPosition.position.y, mainCamera.transform.position.z);
         mainCamera.transform.position = Vector3.Slerp(mainCamera.transform.position, newCameraPosition, 0.1F);
+
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical")) {
+            animationScript.SetMove(true);
+        } else {
+            animationScript.SetMove(false);
+        }
     }
 }

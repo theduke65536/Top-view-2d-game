@@ -78,6 +78,7 @@ MonoBehaviour:
   cooldown: 0.5
   impactEffectSpillBlood1: {fileID: 1856547722293145029, guid: f91f91f37613f5340b662287c9c6445a, type: 3}
   impactEffectSpillBlood2: {fileID: 1856547722293145029, guid: cd470dbdc0a3ca74c979cacd74d00d06, type: 3}
+  animator: {fileID: 923959389, guid: a08aef722b46ec14aa8eb2028a593eb9, type: 3}
 --- !u!1 &9182149122523357369
 GameObject:
   m_ObjectHideFlags: 0

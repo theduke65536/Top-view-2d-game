@@ -13,9 +13,12 @@ public class GunRaycastScript : MonoBehaviour
     public GameObject impactEffectSpillBlood2;
 
     private float ongoingFireCooldown;
+    public PlayerAnimationScript animator;
 
 
     private void FireRaycast() {
+        animator.SetShoot(true);
+
         RaycastHit2D raycastHitInfo = Physics2D.Raycast(gunBarrelPosition.position, gunBarrelPosition.right);
 
         if (raycastHitInfo) {

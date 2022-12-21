@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Script called via UnityEvents from multiple other scripts
@@ -8,37 +6,68 @@ public class PlayerAnimationScript : MonoBehaviour
     public Animator animator;
 
 
-    public void Move() {
-        animator.SetBool("IsMoving",true);
+    private void Update() {
+        if (   !animator.GetBool("IsMoving")
+            && !animator.GetBool("IsShooting")
+            && !animator.GetBool("IsReloading"))
+        {
+            animator.SetBool("IsIdle", true);
+        } else {
+            animator.SetBool("IsIdle", false);
+        }
     }
 
 
-    public void Shoot() {
-        animator.SetBool("IsShooting", true);
+    public void SetMove(bool condition) {
+        animator.SetBool("IsMoving", condition);
+
+
     }
 
 
-    public void Reload() {
-        animator.SetBool("IsReloading", true);
+    public void SetShoot(bool condition) {
+        animator.SetBool("IsShooting", condition);
+
+
     }
 
 
-    public void KnifeEquipped() {
+    public void SetReload(bool condition) {
+        animator.SetBool("IsReloading", condition);
+
+        
+    }
+
+
+
+    public void SetKnifeEquipped() {
         animator.SetBool("KnifeEquipped", true);
+        animator.SetBool("ShotgunEquipped", false);
+        animator.SetBool("AssaultrifleEquipped", false);
+        animator.SetBool("HandgunEquipped", false);
     }
 
 
-    public void ShotgunEquipped() {
+    public void SetShotgunEquipped() {
+        animator.SetBool("KnifeEquipped", false);
         animator.SetBool("ShotgunEquipped", true);
+        animator.SetBool("AssaultrifleEquipped", false);
+        animator.SetBool("HandgunEquipped", false);
     }
 
 
-    public void AssaultrifleEquipped() {
+    public void SetAssaultrifleEquipped() {
+        animator.SetBool("KnifeEquipped", false);
+        animator.SetBool("ShotgunEquipped", false);
         animator.SetBool("AssaultrifleEquipped", true);
+        animator.SetBool("HandgunEquipped", false);
     }
 
 
-    public void HandgunEquipped() {
+    public void SetHandgunEquipped() {
+        animator.SetBool("KnifeEquipped", false);
+        animator.SetBool("ShotgunEquipped", false);
+        animator.SetBool("AssaultrifleEquipped", false);
         animator.SetBool("HandgunEquipped", true);
     }
 }
