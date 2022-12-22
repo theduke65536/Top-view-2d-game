@@ -52,6 +52,7 @@ MonoBehaviour:
   maxHealth: 5
   lingerDamageActive: 0
   thisInstance: {fileID: 7377080105549689851}
+  playerUIScript: {fileID: 0}
 --- !u!61 &9166573736346786004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,12 +113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 8
-  speed: 1
+  speed: 2.5
   attackRadius: 1
-  attackDamage: 1.5
+  attackDamage: 15
   attackCooldown: 0.5
   lingeringDamageSpeed: 0.1
-  lingeringDamageDuration: 0.5
+  lingeringDamageDuration: 1
   animationScript: {fileID: 8180194311631703919}
   playerTransform: {fileID: 0}
   enemyTransform: {fileID: 2102805639999374717}

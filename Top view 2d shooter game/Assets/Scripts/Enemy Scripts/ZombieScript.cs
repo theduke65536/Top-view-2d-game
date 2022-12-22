@@ -27,7 +27,7 @@ public class ZombieScript : MonoBehaviour
     
 
     // Creates a zombie object
-    private void Awake() {
+    private void Start() {
         zombie = new Zombie(detectionRadius, speed, playerTransform, enemyTransform, attackRadius, attackDamage, animationScript);
     }
 
@@ -70,13 +70,13 @@ public class ZombieScript : MonoBehaviour
     IEnumerator LingeringDamageTimer() {
         zombie.playerHealthScript.lingerDamageActive = true;
 
-        while (lingeringDamageOngoingTimer <= lingeringDamageDuration * 10) {
+        while (lingeringDamageOngoingTimer <= lingeringDamageDuration) {
             // Acts the same as a timer
             lingeringDamageOngoingTimer += lingeringDamageSpeed;
 
             yield return new WaitForSeconds(lingeringDamageSpeed);
 
-            zombie.Attack(0.01f);
+            zombie.Attack(1f);
         }
 
         zombie.playerHealthScript.lingerDamageActive = false;

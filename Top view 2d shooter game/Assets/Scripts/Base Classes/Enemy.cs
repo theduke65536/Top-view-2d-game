@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Enemy base class. Inherited by all enemy types.
@@ -16,7 +14,9 @@ abstract class Enemy
 
     protected EnemyAnimationScript animationScript;
 
-    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform, EnemyAnimationScript _animationScript) {
+
+    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform, EnemyAnimationScript _animationScript)
+    {
         playerTransform = _playerTransform;
         detectionRadius = _detectionRadius;
         enemyTransform = _enemyTransform;
@@ -26,37 +26,45 @@ abstract class Enemy
         animationScript = _animationScript;
     }
 
+
     // Checks if the player is currently within detectionRadius.
-    public bool CheckIfPlayerInRange() {
+    public bool CheckIfPlayerInRange()
+    {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(enemyTransform.position, detectionRadius);
 
-        foreach(Collider2D collider in colliders) {
-            if (collider.gameObject.CompareTag("Player")) {
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject.CompareTag("Player"))
+            {
                 return true;
             }
         }
-
         return false;
     }
 
+
     // This is called when the player isn't in range
     // to stop the zombie from continuously moving forward 
-    public void PlayerNotInRange() {
+    public void PlayerNotInRange()
+    {
         enemyRb.velocity = Vector2.zero;
         enemyTransform.right = playerLookVector;
         animationScript.SetMove(false);
     }
-    // Points the transform.right of the zombie to the player.
-    public void LookAtPlayer() {
 
+
+    // Points the transform.right of the zombie to the player.
+    public void LookAtPlayer()
+    {
         animationScript.SetMove(true);
         playerLookVector = playerTransform.position - enemyTransform.position;
         enemyTransform.right = Vector3.Slerp(enemyTransform.right, playerLookVector, 0.2f);
-
     }
 
+
     // Moves towards the player.
-    public void MoveTowardsPlayer() {
+    public void MoveTowardsPlayer()
+    {
         enemyRb.velocity = enemyTransform.right * speed;
     }
 }

@@ -24,7 +24,7 @@ public class GunRaycastScript : MonoBehaviour
                 HealthSystemScript healthSystemScript = raycastHitInfo.transform.GetComponent<HealthSystemScript>();
                 healthSystemScript.TakeDamage(damage);
 
-                Instantiate(impactEffectBlood, raycastHitInfo.point, Quaternion.identity, raycastHitInfo.transform);
+                Instantiate(impactEffectBlood, raycastHitInfo.point, Quaternion.Euler(0, 0, Random.Range(-360, 360)), raycastHitInfo.transform);
 
                 // Gets a random blood spill effect and instantiates it
                 GameObject[] spillBloodEffectArr = new GameObject[] { impactEffectSpillBlood1, impactEffectSpillBlood2 };
@@ -33,7 +33,7 @@ public class GunRaycastScript : MonoBehaviour
                 // This is to instantiated it behind everything else.
                 Vector3 hitPosition = new Vector3(raycastHitInfo.point.x, raycastHitInfo.point.y, 1);
 
-                Instantiate(spillBloodEffectArr[index], hitPosition, Quaternion.identity);
+                Instantiate(spillBloodEffectArr[index], hitPosition, Quaternion.Euler(0, 0, Random.Range(-360, 360)));
             }
         }
     }

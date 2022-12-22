@@ -10,20 +10,17 @@ public class PickupItems : MonoBehaviour
 
     // Prefab of each gun
     public GameObject rocketLauncherObject;
-
     public GameObject sniperRifleObject;
-
     public GameObject sampleGunObject;
-
     public GameObject handgunObject;
-
     public GameObject assaultrifleObject;
-
     public GameObject shotgunObject;
 
     // Instantiates the gun and sets it's parent the Inventory
-    public void PickupGun(Vector3 position, Quaternion rotation, GameObject gunObject) {
-        GameObject instantiatedGun = GameObject.Instantiate(gunObject, position, rotation);
+    public void PickupGun(GameObject gunObject)
+    {
+        GameObject instantiatedGun = GameObject.Instantiate(gunObject, defaultGunInstantiationPosition.position, transform.rotation);
+    
 
         instantiatedGun.transform.parent = transform;
         instantiatedGun.SetActive(false);
@@ -32,31 +29,31 @@ public class PickupItems : MonoBehaviour
 
     // These methods are called when the player player picks up an item
     public void pickupRocketLauncher() {
-        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, rocketLauncherObject);
+        PickupGun(rocketLauncherObject);
     }
 
 
     public void pickupSniperRifle() {
-        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, sniperRifleObject);
+        PickupGun(sniperRifleObject);
     }
 
 
     public void pickupSampleGun() {
-        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, sampleGunObject);
+        PickupGun(sampleGunObject);
     }
 
 
     public void pickupHandgun() {
-        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, handgunObject);
+        PickupGun(handgunObject);
     }
 
 
     public void pickupAssaultRifle() {
-        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, assaultrifleObject);
+        PickupGun(assaultrifleObject);
     }
 
 
     public void pickupShotgun() {
-        PickupGun(defaultGunInstantiationPosition.position, transform.rotation, shotgunObject);
+        PickupGun(shotgunObject);
     }
 }

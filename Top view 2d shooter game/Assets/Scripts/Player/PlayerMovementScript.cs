@@ -28,6 +28,7 @@ public class PlayerMovementScript : MonoBehaviour
         // Up down, left right movement
         playerVelocity = new Vector2(horizontalAxis, verticalAxis) * movementSpeed;
         playerRigidbody.velocity = playerVelocity;
+        playerRigidbody.angularVelocity = 0;
 
         // Causes the player to look at where the cursor is
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -41,7 +42,8 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical")) {
             animationScript.SetMove(true);
-        } else {
+        } else 
+        {
             animationScript.SetMove(false);
         }
     }
