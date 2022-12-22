@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class PlayerUIScript : MonoBehaviour
+public class HealthUIScript : MonoBehaviour
 {
     public Slider healthBar;
     public TextMeshProUGUI healthNumber;
@@ -18,9 +18,9 @@ public class PlayerUIScript : MonoBehaviour
     }
 
 
-    public void OnTakeDamage(float damage)
+    public void SetHealth(float health)
     {
-        healthBar.value -= damage;
+        healthBar.value = health;
         healthNumber.text = Convert.ToString(healthBar.value);
     }
 }

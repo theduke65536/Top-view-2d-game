@@ -5,7 +5,7 @@ using UnityEngine;
 // Script attatched to the Zombie prefab.
 public class ZombieScript : MonoBehaviour
 {
-    private Zombie zombie;  // Zombie class
+    private Zombie zombie;               // Zombie class
 
     public float detectionRadius;        // The radius at which the player is seen by the zombie
     public float speed;                  // How fast the zombie moves
@@ -16,6 +16,7 @@ public class ZombieScript : MonoBehaviour
     public float lingeringDamageDuration;// How long lingering damage lasts
 
     public EnemyAnimationScript animationScript;
+    public Canvas canvas;
 
     public Transform playerTransform;
     public Transform enemyTransform;
@@ -63,6 +64,8 @@ public class ZombieScript : MonoBehaviour
         } else {
             zombie.PlayerNotInRange();
         }
+
+        canvas.transform.position = transform.position;
     }
 
     // When the zombie attacks the player, they slowly continue taking damage overtime

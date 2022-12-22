@@ -8,6 +8,7 @@ public class GunRaycastScript : MonoBehaviour
     public float damage;                        // Damage dealt by the raycasst
     public GameObject impactEffectBlood;        // Effect on impacting an alive GameObject
     public float cooldown;                      // Speed at which the player can fire
+    public bool fullAuto;                       // If the gun is fully automatic 
 
     public GameObject impactEffectSpillBlood1;   // Blood that's left on the floor when an enemy has been hit
     public GameObject impactEffectSpillBlood2;
@@ -41,7 +42,13 @@ public class GunRaycastScript : MonoBehaviour
 
     private void Update() {
         ongoingFireCooldown += Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && ongoingFireCooldown >= cooldown) {
+
+        if (fullAuto && Input.GetButton("Fire1") && ongoingFireCooldown >= cooldown)
+        {
+            FireRaycast();
+            ongoingFireCooldown = 0;
+        }
+        else if (!fullAuto && Input.GetButtonDown("Fire1") && ongoingFireCooldown >= cooldown) {
             FireRaycast();
             ongoingFireCooldown = 0;
 

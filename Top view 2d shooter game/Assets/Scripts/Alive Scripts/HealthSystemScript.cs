@@ -10,34 +10,33 @@ public class HealthSystemScript : MonoBehaviour
     private float health;                    // Current health the GameObject has.
     [HideInInspector] public bool lingerDamageActive;
     public GameObject thisInstance;
-    public PlayerUIScript playerUIScript;
 
-
-    private void Start() {
-        health = maxHealth;
-    }
+    // The UI script to call to (will have different variable values on different gameobjs)
+    public HealthUIScript targetUIScript;
 
 
     public void Awake()
     {
-        if (gameObject.CompareTag("Player"))
-        {
-            playerUIScript.SetMaxHealth(maxHealth);
-        }
+        health = maxHealth;
+
+        targetUIScript.SetMaxHealth(maxHealth);
     }
 
 
-    public void TakeDamage(float damage) {
+    public void TakeDamage(float damage)
+    {
         health -= damage;
 
-        health = Mathf.Round(health);
-
-        if (thisInstance.CompareTag("Player")) {
-            playerUIScript.OnTakeDamage(damage);
-        }
+        print(health);
         // Kills the GameObject once it's health is zero.
-        if (health <= 0) {
+        if (health <= 0)
+        {
             Destroy(thisInstance);
         }
+
+        // Changes the gui
+        targetUIScript.SetHealth(health);
+
+
     }
 }
