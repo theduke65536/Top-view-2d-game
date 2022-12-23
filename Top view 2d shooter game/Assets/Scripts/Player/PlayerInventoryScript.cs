@@ -56,19 +56,19 @@ public class PlayerInventoryScript : MonoBehaviour
         // The exact same way as the Minecraft hotbar system.
         
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && Weapons[0] != null) {
             Weapons[0].SetActive(!Weapons[0].activeSelf);
             setSiblingsInactive(Weapons[0]);
 
             currentlyEquipped = Weapons[0];
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && Weapons[0] != null) {
             Weapons[1].SetActive(!Weapons[1].activeSelf);
             setSiblingsInactive(Weapons[1]);
 
             currentlyEquipped = Weapons[1];
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) {
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && Weapons[0] != null) {
             Weapons[2].SetActive(!Weapons[2].activeSelf);
             setSiblingsInactive(Weapons[2]);
 

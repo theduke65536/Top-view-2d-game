@@ -97,9 +97,21 @@ MonoBehaviour:
   equipItem:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8074430510286064097, guid: a08aef722b46ec14aa8eb2028a593eb9, type: 3}
         m_TargetAssemblyTypeName: PickupItems, Assembly-CSharp
-        m_MethodName: pickupHandgun
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InventoryUIScript, Assembly-CSharp
+        m_MethodName: EquipHandgun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

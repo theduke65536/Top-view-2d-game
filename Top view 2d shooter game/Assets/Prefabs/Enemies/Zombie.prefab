@@ -80,8 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1d0255529c0094dbf7a8b5be5baa54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 8
-  speed: 2.5
+  detectionRadius: 15
+  speed: 3.5
   attackRadius: 1
   attackDamage: 15
   attackCooldown: 0.5

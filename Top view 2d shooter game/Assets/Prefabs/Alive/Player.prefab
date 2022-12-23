@@ -156,6 +156,7 @@ MonoBehaviour:
   movementSpeed: 5
   mainCamera: {fileID: 0}
   cameraPosition: {fileID: 2011995911}
+  centerOfRotation: {fileID: 0}
 --- !u!114 &923959388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ MonoBehaviour:
   maxHealth: 100
   lingerDamageActive: 0
   thisInstance: {fileID: 8074430510286064097}
-  playerUIScript: {fileID: 3504657939386918750}
+  targetUIScript: {fileID: 3504657939386918750}
 --- !u!114 &923959389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,9 +215,9 @@ MonoBehaviour:
   Slot1: {fileID: 0}
   Slot2: {fileID: 0}
   Slot3: {fileID: 0}
-  shotgunSprite: {fileID: 21300000, guid: ef49e095f7d443b4bb8e8c944dced361, type: 3}
-  handgunSprite: {fileID: 21300000, guid: 7ad4cc5005fd00143a33f229c5cb1681, type: 3}
-  assaultrifleSprite: {fileID: 21300000, guid: 035acd1a3516c6a40b1beaeb955d0320, type: 3}
+  shotgunSprite: {fileID: 21300000, guid: 9a28af0b39bd9e845982775edb190d35, type: 3}
+  handgunSprite: {fileID: 21300000, guid: aa40da1f44456454a9dc950d2409202a, type: 3}
+  assaultrifleSprite: {fileID: 21300000, guid: b1bd46286fd9a344fa70570d0678703c, type: 3}
 --- !u!1 &8936254607014259653
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +292,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b5f5e82d123884c47938f14fe3b62251, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f13b5445a446a6146a70df278271c2bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

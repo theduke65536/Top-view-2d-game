@@ -47,10 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3206765452709619164, guid: 771324506fae6c740bf92330f5214f40, type: 3}
   gunBarrelPosition: {fileID: 5782810264586718812}
-  projectileSpeed: 20
-  cooldown: 1
-  directionalDeviationRange: 1
-  projectileCount: 3
+  projectileSpeed: 40
+  cooldown: 1.25
+  directionalDeviationRange: 0.3
+  projectileCount: 12
 --- !u!1 &5179699331288844794
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5179699331288844794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.55, y: 0, z: 0}
+  m_LocalPosition: {x: 0.205, y: -0.191, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

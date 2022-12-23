@@ -9,8 +9,8 @@ public class ShotgunProjectileScript : MonoBehaviour
     public Transform gunBarrelPosition;        // The position that the projectile will be fired from.
     public float projectileSpeed;              // The speed of the projectile.
     public float cooldown;                     // Speed at which the player can fire
-    public float directionalDeviationRange;  // The spread of the projectiles
-    public int projectileCount;
+    public float directionalDeviationRange;    // The spread of the projectiles
+    public int projectileCount;                // The number of projectiles
 
     private float ongoingFireCooldown;
 
@@ -20,7 +20,7 @@ public class ShotgunProjectileScript : MonoBehaviour
         {
             // Generates a random vector pointing to the direction the projectile will go in
             float directionalDeviationAmount = Random.Range(-directionalDeviationRange, directionalDeviationRange);
-            Vector3 directionalDeviationVector = new Vector3(directionalDeviationAmount, 0, 0);
+            Vector3 directionalDeviationVector = new Vector3(directionalDeviationAmount, directionalDeviationAmount, 0);
 
             // We don't have to worry about the rotation now, we'll just set it later on.
             GameObject instantiatedProjectile = GameObject.Instantiate(projectile, gunBarrelPosition.position, Quaternion.identity);
@@ -30,7 +30,7 @@ public class ShotgunProjectileScript : MonoBehaviour
             Vector3 travelDirectionVector = gunBarrelPosition.right + directionalDeviationVector;
             instantiatedProjectileRb.velocity = travelDirectionVector.normalized * projectileSpeed;
 
-            instantiatedProjectile.transform.right = instantiatedProjectileRb.velocity;
+            instantiatedProjectile.transform.right = instantiatedProjectileRb   .velocity;
 
         }
     }
