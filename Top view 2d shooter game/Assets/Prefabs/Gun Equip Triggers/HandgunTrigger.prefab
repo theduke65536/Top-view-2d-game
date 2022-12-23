@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2575101815774823051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.47, y: 1.47, z: 1.47}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6512583273679812548}
@@ -69,7 +69,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014180601, y: -0.035602883}
+  m_Offset: {x: 0.13376696, y: -0.054977044}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -80,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.51236403, y: 0.38322052}
+  m_Size: {x: 0.77646315, y: 0.42196885}
   m_EdgeRadius: 0
 --- !u!114 &5379384199078285358
 MonoBehaviour:
@@ -97,7 +97,7 @@ MonoBehaviour:
   equipItem:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8074430510286064097, guid: a08aef722b46ec14aa8eb2028a593eb9, type: 3}
+      - m_Target: {fileID: 2800000, guid: b6dbee690fef54d40b3da1cdbd8e2c74, type: 3}
         m_TargetAssemblyTypeName: PickupItems, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -111,7 +111,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InventoryUIScript, Assembly-CSharp
-        m_MethodName: EquipHandgun
+        m_MethodName: EquipAssaultrifle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,8 +147,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5273160078758150993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.045, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_LocalPosition: {x: 0.103, y: -0.051, z: 0}
+  m_LocalScale: {x: 0.120349996, y: 0.10684444, z: 0.29}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4975055628098074496}
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.94, y: 4.2}
+  m_Size: {x: 5.96, y: 4.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -5,6 +5,7 @@ abstract class Enemy
 {
     protected float detectionRadius;       // The radius at which the player is seen by the enemy
     protected float speed;                 // How fast the enemy moves
+    protected float attackRadius;          // Radius which the enemy will attack the player
 
     protected Transform enemyTransform;
     protected Transform playerTransform;
@@ -15,7 +16,7 @@ abstract class Enemy
     protected EnemyAnimationScript animationScript;
 
 
-    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform, EnemyAnimationScript _animationScript)
+    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform, EnemyAnimationScript _animationScript, float _attackRadius)
     {
         playerTransform = _playerTransform;
         detectionRadius = _detectionRadius;
@@ -24,6 +25,7 @@ abstract class Enemy
 
         enemyRb = enemyTransform.GetComponent<Rigidbody2D>();
         animationScript = _animationScript;
+        attackRadius = _attackRadius;
     }
 
 
@@ -56,7 +58,6 @@ abstract class Enemy
     // Points the transform.right of the zombie to the player.
     public void LookAtPlayer()
     {
-        animationScript.SetMove(true);
         playerLookVector = playerTransform.position - enemyTransform.position;
         enemyTransform.right = Vector3.Slerp(enemyTransform.right, playerLookVector, 0.2f);
     }
@@ -66,5 +67,22 @@ abstract class Enemy
     public void MoveTowardsPlayer()
     {
         enemyRb.velocity = enemyTransform.right * speed;
+        animationScript.SetMove(true);
+    }
+
+    // Checks if the player is in range to be attacked
+    public bool CheckIfPlayerInAtkRange()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(enemyTransform.position, attackRadius);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

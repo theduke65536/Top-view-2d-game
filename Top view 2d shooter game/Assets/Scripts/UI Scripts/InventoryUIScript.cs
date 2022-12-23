@@ -11,8 +11,8 @@ public class InventoryUIScript : MonoBehaviour
     public Image Slot2;
     public Image Slot3;
 
-    private IDictionary<int, Image> validSlotsDict;
-    private int validSlot;
+    public IDictionary<int, Image> validSlotsDict;
+    public int validSlot = 0;
 
     public Sprite shotgunSprite;
     public Sprite handgunSprite;
@@ -35,9 +35,7 @@ public class InventoryUIScript : MonoBehaviour
 
     public void EquipShotgun()
     {
-        validSlot += 1;
-
-        Image slot = validSlotsDict[validSlot];
+        Image slot = GetValidImage();
         slot.sprite = shotgunSprite;
         slot.color = new Color(255, 255, 255);
     }
@@ -45,20 +43,24 @@ public class InventoryUIScript : MonoBehaviour
 
     public void EquipAssaultrifle()
     {
-        validSlot += 1;
-
-        Image slot = validSlotsDict[validSlot];
+        Image slot = GetValidImage();
         slot.sprite = assaultrifleSprite;
         slot.color = new Color(255, 255, 255);
     }
 
 
-    public void EquipHandgun()
+    public Image GetValidImage()
     {
         validSlot += 1;
+        return validSlotsDict[validSlot];
+    }
 
-        Image slot = validSlotsDict[validSlot];
+
+    public void EquipHandgun()
+    {
+        Image slot = GetValidImage();
         slot.sprite = handgunSprite;
         slot.color = new Color(255, 255, 255);
     }
+    
 }

@@ -86,7 +86,7 @@ public class PlayerInventoryScript : MonoBehaviour
             if (currentlyEquipped.name == "Handgun(Clone)") {
                 animatorScript.SetHandgunEquipped();
             }
-            if (currentlyEquipped.name == "Shotgun(Clone)") {
+            if (currentlyEquipped.name == "Shotgun (Player)(Clone)") {
                 animatorScript.SetShotgunEquipped();
             }
         }

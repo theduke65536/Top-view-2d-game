@@ -20,7 +20,6 @@ public class PickupItems : MonoBehaviour
     public void PickupGun(GameObject gunObject)
     {
         GameObject instantiatedGun = GameObject.Instantiate(gunObject, defaultGunInstantiationPosition.position, transform.rotation);
-    
 
         instantiatedGun.transform.parent = transform;
         instantiatedGun.SetActive(false);

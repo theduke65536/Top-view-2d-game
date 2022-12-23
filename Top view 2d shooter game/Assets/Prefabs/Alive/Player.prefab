@@ -156,7 +156,6 @@ MonoBehaviour:
   movementSpeed: 5
   mainCamera: {fileID: 0}
   cameraPosition: {fileID: 2011995911}
-  centerOfRotation: {fileID: 0}
 --- !u!114 &923959388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +214,7 @@ MonoBehaviour:
   Slot1: {fileID: 0}
   Slot2: {fileID: 0}
   Slot3: {fileID: 0}
+  validSlot: 0
   shotgunSprite: {fileID: 21300000, guid: 9a28af0b39bd9e845982775edb190d35, type: 3}
   handgunSprite: {fileID: 21300000, guid: aa40da1f44456454a9dc950d2409202a, type: 3}
   assaultrifleSprite: {fileID: 21300000, guid: b1bd46286fd9a344fa70570d0678703c, type: 3}
