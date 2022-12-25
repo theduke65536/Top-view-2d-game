@@ -51,7 +51,7 @@ abstract class Enemy
     {
         enemyRb.velocity = Vector2.zero;
         enemyTransform.right = playerLookVector;
-        animationScript.SetMove(false);
+        animationScript?.SetMove(false);
     }
 
 
@@ -67,7 +67,7 @@ abstract class Enemy
     public void MoveTowardsPlayer()
     {
         enemyRb.velocity = enemyTransform.right * speed;
-        animationScript.SetMove(true);
+        animationScript?.SetMove(true);
     }
 
     // Checks if the player is in range to be attacked

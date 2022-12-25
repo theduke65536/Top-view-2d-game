@@ -34,8 +34,9 @@ class Zombie : Enemy
         if (playerHealthScript is not null) {
             // Simply another way to make an optional parameter without using consts
             // As 0 will never be used as an arguement
-            if (attackDamage == 0) {
+            if (damage == 0) {
                 damage = attackDamage;
+
             }
 
             playerHealthScript.TakeDamage(damage);

@@ -13,11 +13,13 @@ public class SoldierScript : MonoBehaviour
     public Transform enemyTransform;
     public float attackRadius;
     public float fireCooldown;
+    public Canvas canvas;
 
     public EnemyAnimationScript animationScript;
 
     private float ongoingCooldownTimer = 0;
     private bool isPlayerInViewRange;
+    private bool isPlayerInAttackRange;
 
     private void Awake()
     {
@@ -27,19 +29,28 @@ public class SoldierScript : MonoBehaviour
 
     void Update()
     {
+        canvas.transform.position = transform.position;
+
         isPlayerInViewRange = soldier.CheckIfPlayerInRange();
-
-        if (isPlayerInViewRange)
+        isPlayerInAttackRange = soldier.CheckIfPlayerInAtkRange();
+        
+        // Soldier will move towards player until in attack range 
+        // Where it will stop moving and shoot at them
+        if (isPlayerInAttackRange)
         {
-            soldier.LookAtPlayer();
-
             ongoingCooldownTimer += Time.deltaTime;
             if (ongoingCooldownTimer >= fireCooldown)
             {
                 soldier.Attack();
                 ongoingCooldownTimer = 0f;
-
             }
+            soldier.LookAtPlayer();
+            soldier.PlayerNotInRange();
+        }
+        else if (isPlayerInViewRange)
+        {
+            soldier.LookAtPlayer();
+            soldier.MoveTowardsPlayer();
         }
         else
         {

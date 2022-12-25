@@ -25,16 +25,16 @@ public class ZombieScript : MonoBehaviour
     private bool isPlayerInAtkRange;
     private float ongoingAttackCooldown;
     private float lingeringDamageOngoingTimer;
-    
 
-    // Creates a zombie object
-    private void Start() {
+
+    private void Start()
+    {
         zombie = new Zombie(detectionRadius, speed, playerTransform, enemyTransform, attackRadius, attackDamage, animationScript);
     }
 
 
-    private void Update() {
-
+    private void Update()
+    {
         isPlayerInAtkRange = zombie.CheckIfPlayerInAtkRange();
 
         // Attacks the player if they're in range and cooldown has finished
@@ -49,13 +49,11 @@ public class ZombieScript : MonoBehaviour
             }
             else {
                 lingeringDamageOngoingTimer = 0;
-
             }
-
             ongoingAttackCooldown = 0;
         }
 
-
+        
         isPlayerInViewRange = zombie.CheckIfPlayerInRange();
 
         if (isPlayerInViewRange) {
@@ -72,6 +70,7 @@ public class ZombieScript : MonoBehaviour
     // Like an infection
     IEnumerator LingeringDamageTimer() {
         zombie.playerHealthScript.lingerDamageActive = true;
+
 
         while (lingeringDamageOngoingTimer <= lingeringDamageDuration) {
             // Acts the same as a timer
