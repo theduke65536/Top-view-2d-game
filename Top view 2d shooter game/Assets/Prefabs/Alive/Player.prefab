@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 923959389}
   - component: {fileID: 3504657939386918750}
   - component: {fileID: 3324132552768831316}
+  - component: {fileID: 4467262184961624461}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   healthNumber: {fileID: 0}
+  lingerDamageColor: {r: 0.2385274, g: 0.7169812, b: 0.16571736, a: 0}
 --- !u!114 &3324132552768831316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +220,26 @@ MonoBehaviour:
   shotgunSprite: {fileID: 21300000, guid: 9a28af0b39bd9e845982775edb190d35, type: 3}
   handgunSprite: {fileID: 21300000, guid: aa40da1f44456454a9dc950d2409202a, type: 3}
   assaultrifleSprite: {fileID: 21300000, guid: b1bd46286fd9a344fa70570d0678703c, type: 3}
+--- !u!114 &4467262184961624461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074430510286064097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cb1a6b25008234fa63fecee7aef34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultGunInstantiationPosition: {fileID: 7418015323675866010}
+  rocketLauncherObject: {fileID: 0}
+  sniperRifleObject: {fileID: 0}
+  sampleGunObject: {fileID: 0}
+  handgunObject: {fileID: 2575101815774823051, guid: c4c461fc58abd7e428a018ed6846fee0, type: 3}
+  assaultrifleObject: {fileID: 2575101815774823051, guid: a41b008064f75ac4db16ba998b7249d1, type: 3}
+  shotgunObject: {fileID: 2575101815774823051, guid: 736a54d9543e8824a9371e4a2205df96, type: 3}
+  inventory: {fileID: 6889463444308578843}
 --- !u!1 &8936254607014259653
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +355,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6889463444308578843}
   - component: {fileID: 2122536034}
-  - component: {fileID: 2122536036}
   m_Layer: 6
   m_Name: Inventory
   m_TagString: Untagged
@@ -368,22 +389,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e864505f9eed453459821f4103e03cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2122536036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9197285391636199145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03cb1a6b25008234fa63fecee7aef34a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultGunInstantiationPosition: {fileID: 7418015323675866010}
-  rocketLauncherObject: {fileID: 2901441619188215734, guid: 251ba90371529dd4d870a3207ca0be77, type: 3}
-  sniperRifleObject: {fileID: 6093610657775524981, guid: af7b52e8e887aee46aae2401f12d0f8c, type: 3}
-  sampleGunObject: {fileID: 4616182140421978660, guid: 13c44c6476295554494bca0233797973, type: 3}
-  handgunObject: {fileID: 2575101815774823051, guid: c4c461fc58abd7e428a018ed6846fee0, type: 3}
-  assaultrifleObject: {fileID: 2575101815774823051, guid: a41b008064f75ac4db16ba998b7249d1, type: 3}
-  shotgunObject: {fileID: 2575101815774823051, guid: 736a54d9543e8824a9371e4a2205df96, type: 3}

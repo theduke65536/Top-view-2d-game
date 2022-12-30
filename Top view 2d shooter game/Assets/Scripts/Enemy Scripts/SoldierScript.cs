@@ -9,7 +9,7 @@ public class SoldierScript : MonoBehaviour
     public SoldierShotgunScript shotgunScript;
     public float detectionRadius;
     public float speed;
-    public Transform playerTransform;
+    private Transform playerTransform;
     public Transform enemyTransform;
     public float attackRadius;
     public float fireCooldown;
@@ -20,6 +20,13 @@ public class SoldierScript : MonoBehaviour
     private float ongoingCooldownTimer = 0;
     private bool isPlayerInViewRange;
     private bool isPlayerInAttackRange;
+
+
+    private void Start()
+    {
+        playerTransform = GameObject.Find("Player").transform;
+    }
+
 
     private void Awake()
     {

@@ -16,9 +16,9 @@ abstract class Enemy
     protected EnemyAnimationScript animationScript;
 
 
-    public Enemy(float _detectionRadius, float _speed, Transform _playerTransform, Transform _enemyTransform, EnemyAnimationScript _animationScript, float _attackRadius)
+    public Enemy(float _detectionRadius, float _speed, Transform _enemyTransform, EnemyAnimationScript _animationScript, float _attackRadius)
     {
-        playerTransform = _playerTransform;
+        playerTransform = GameObject.Find("Player").transform;
         detectionRadius = _detectionRadius;
         enemyTransform = _enemyTransform;
         speed = _speed;
@@ -26,6 +26,7 @@ abstract class Enemy
         enemyRb = enemyTransform.GetComponent<Rigidbody2D>();
         animationScript = _animationScript;
         attackRadius = _attackRadius;
+
     }
 
 

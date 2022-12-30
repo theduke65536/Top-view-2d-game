@@ -71,12 +71,12 @@ public class ZombieScript : MonoBehaviour
     IEnumerator LingeringDamageTimer() {
         zombie.playerHealthScript.lingerDamageActive = true;
 
-
         while (lingeringDamageOngoingTimer <= lingeringDamageDuration) {
             // Acts the same as a timer
             lingeringDamageOngoingTimer += lingeringDamageSpeed;
 
             yield return new WaitForSeconds(lingeringDamageSpeed);
+
 
             zombie.Attack(1f);
         }

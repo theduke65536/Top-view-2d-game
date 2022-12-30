@@ -19,7 +19,7 @@ class Soldier : Enemy
             SoldierShotgunScript _shotgunScript
 
 
-        ) : base(_detectionRadius, _speed, _playerTransform, _enemyTransform, _animationScript, _attackRadius)
+        ) : base(_detectionRadius, _speed, _enemyTransform, _animationScript, _attackRadius)
     {
         shotgunScript = _shotgunScript;
     }

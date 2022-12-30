@@ -27,7 +27,6 @@ public class HealthSystemScript : MonoBehaviour
     {
         health -= damage;
 
-        print(health);
         // Kills the GameObject once it's health is zero.
         if (health <= 0)
         {
@@ -36,7 +35,5 @@ public class HealthSystemScript : MonoBehaviour
 
         // Changes the gui
         targetUIScript.SetHealth(health);
-
-
     }
 }

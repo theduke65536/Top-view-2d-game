@@ -88,9 +88,10 @@ MonoBehaviour:
   attackCooldown: 1
   lingeringDamageSpeed: 0.1
   lingeringDamageDuration: 1
+  healthUIScript: {fileID: 3504657939386918750, guid: a08aef722b46ec14aa8eb2028a593eb9, type: 3}
   animationScript: {fileID: 319862810374007885}
   canvas: {fileID: 6150079384437108428}
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 4459618820121249056, guid: a08aef722b46ec14aa8eb2028a593eb9, type: 3}
   enemyTransform: {fileID: 6603632905732192739}
 --- !u!114 &319862810374007885
 MonoBehaviour:
@@ -384,6 +385,14 @@ PrefabInstance:
     - target: {fileID: 2344715420878129282, guid: bc5442403821235418966b835c08515d, type: 3}
       propertyPath: m_Name
       value: Health canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884950546900621273, guid: bc5442403821235418966b835c08515d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884950546900621273, guid: bc5442403821235418966b835c08515d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc5442403821235418966b835c08515d, type: 3}

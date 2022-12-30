@@ -21,7 +21,7 @@ class Zombie : Enemy
             float _attackDamage,
             EnemyAnimationScript _animationScript
         )
-            : base(_detectionRadius, _speed, _playerTransform, _enemyTransform, _animationScript, _attackRadius)
+            : base(_detectionRadius, _speed, _enemyTransform, _animationScript, _attackRadius)
     {
         attackDamage = _attackDamage;
 

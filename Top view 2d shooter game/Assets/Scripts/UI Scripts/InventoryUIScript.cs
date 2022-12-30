@@ -51,6 +51,13 @@ public class InventoryUIScript : MonoBehaviour
 
     public Image GetValidImage()
     {
+        validSlotsDict = new Dictionary<int, Image>()
+        {
+            { 1, Slot1 },
+            { 2, Slot2 },
+            { 3, Slot3 }
+        };
+
         validSlot += 1;
         return validSlotsDict[validSlot];
     }
