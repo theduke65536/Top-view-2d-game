@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 923959388}
   - component: {fileID: 923959389}
   - component: {fileID: 3504657939386918750}
-  - component: {fileID: 3324132552768831316}
   - component: {fileID: 4467262184961624461}
   m_Layer: 6
   m_Name: Player
@@ -201,25 +200,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   healthNumber: {fileID: 0}
   lingerDamageColor: {r: 0.2385274, g: 0.7169812, b: 0.16571736, a: 0}
---- !u!114 &3324132552768831316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8074430510286064097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ce06bb5460faee4699d1e43dbba986b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Slot1: {fileID: 0}
-  Slot2: {fileID: 0}
-  Slot3: {fileID: 0}
-  validSlot: 0
-  shotgunSprite: {fileID: 21300000, guid: 9a28af0b39bd9e845982775edb190d35, type: 3}
-  handgunSprite: {fileID: 21300000, guid: aa40da1f44456454a9dc950d2409202a, type: 3}
-  assaultrifleSprite: {fileID: 21300000, guid: b1bd46286fd9a344fa70570d0678703c, type: 3}
 --- !u!114 &4467262184961624461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6889463444308578843}
   - component: {fileID: 2122536034}
+  - component: {fileID: 5425540782286038835}
   m_Layer: 6
   m_Name: Inventory
   m_TagString: Untagged
@@ -389,3 +370,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e864505f9eed453459821f4103e03cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5425540782286038835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197285391636199145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce06bb5460faee4699d1e43dbba986b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slot1: {fileID: 0}
+  Slot2: {fileID: 0}
+  Slot3: {fileID: 0}
+  validSlot: 0
+  shotgunSprite: {fileID: 21300000, guid: 9a28af0b39bd9e845982775edb190d35, type: 3}
+  handgunSprite: {fileID: 21300000, guid: aa40da1f44456454a9dc950d2409202a, type: 3}
+  assaultrifleSprite: {fileID: 21300000, guid: b1bd46286fd9a344fa70570d0678703c, type: 3}

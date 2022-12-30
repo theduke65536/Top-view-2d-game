@@ -16,13 +16,11 @@ public class PickupItems : MonoBehaviour
     public GameObject assaultrifleObject;
     public GameObject shotgunObject;
 
-    public Transform inventory;
-
     // Instantiates the gun and sets it's parent the Inventory
     public void PickupGun(GameObject gunObject)
     {
 
-        GameObject instantiatedGun = GameObject.Instantiate(gunObject, defaultGunInstantiationPosition.position, inventory.rotation);
+        GameObject instantiatedGun = GameObject.Instantiate(gunObject, defaultGunInstantiationPosition.position, transform.rotation);
 
         instantiatedGun.transform.parent = transform;
         instantiatedGun.SetActive(false);
